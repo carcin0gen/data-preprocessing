@@ -1,1 +1,46 @@
+-- Aquí se seleccionó para que previamente se pueda ver toda la tabla.
+SELECT * FROM INE_DISTRITO_2020;
 
+-- Con este código podemos ver específicamente los datos de nom_ent no repetidos.
+SELECT DISTINCT NOM_ENT FROM INE_DISTRITO_2020;
+
+--Aquí actualizamos cada entidad en NOM_ENT que tenga un carácter especial.
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'Ciudad de México'
+WHERE NOM_ENT LIKE 'Ciudad de M%';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'Michoacán de Ocampo'
+WHERE NOM_ENT LIKE 'Michoac%';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'México'
+WHERE NOM_ENT LIKE 'M%xico';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'Nuevo León'
+WHERE NOM_ENT LIKE 'Nuevo Le%';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'Querétaro'
+WHERE NOM_ENT LIKE 'Quer%';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'San Luis Potosí'
+WHERE NOM_ENT LIKE 'San Luis Potos%';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'Yucatán'
+WHERE NOM_ENT LIKE 'Yucat%';
+
+-- Con este código podemos ver específicamente los datos de COMPLEJIDA no repetidos.
+SELECT DISTINCT COMPLEJIDA FROM INE_DISTRITO_2020;
+
+--Aquí actualizamos cada dato en COMPLEJIDA que tenga un carácter especial.
+UPDATE INE_DISTRITO_2020
+SET COMPLEJIDA = 'Concentración Media'
+WHERE COMPLEJIDA LIKE 'Concentraci%';
+
+--Al final agregamos dummy columns en base a la columna de COMPLEJIDA.
+ALTER TABLE INE_DISTRITO_2020
+ADD ALT_CON_1 INT, ALT_CON_2 INT, CON_MED INT, CON1 INT, CON2 INT, DIS1 INT, DIS2 INT, M_DIS1 INT, M_DIS2 INT;
