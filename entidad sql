@@ -1,1 +1,34 @@
+-- Aquí se seleccionó para que previamente se pueda ver toda la tabla.
+SELECT * FROM INE_ENTIDAD_2020;
 
+-- Con este código podemos ver específicamente los datos de nom_ent no repetidos.
+SELECT DISTINCT NOM_ENT FROM INE_ENTIDAD_2020;
+
+--Aquí actualizamos cada entidad en NOM_ENT que tenga un carácter especial.
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'Ciudad de México'
+WHERE NOM_ENT LIKE 'Ciudad de M%';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'Michoacán de Ocampo'
+WHERE NOM_ENT LIKE 'Michoac%';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'México'
+WHERE NOM_ENT LIKE 'M%xico';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'Nuevo León'
+WHERE NOM_ENT LIKE 'Nuevo Le%';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'Querétaro'
+WHERE NOM_ENT LIKE 'Quer%';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'San Luis Potosí'
+WHERE NOM_ENT LIKE 'San Luis Potos%';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'Yucatán'
+WHERE NOM_ENT LIKE 'Yucat%';
